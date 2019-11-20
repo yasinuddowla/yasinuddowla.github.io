@@ -109,21 +109,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <h4>Contact Me:</h4>
-                    <form id="msgForm">
-                        <input type="hidden" value="sklfjsd">
-                        <div class="form-group">
-                            <input required type="text" name="name" class="form-control" placeholder="Your Name">
-                        </div>
-                        <div class="form-group">
-                            <input required type="email" name="email" class="form-control" placeholder="Your Email">
-                        </div>
-                        <div class="form-group">
-                            <textarea required type="text" name="msg" rows="5" class="form-control" placeholder="Your Message..."></textarea>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-info">Send Message</button>
-                        </div>
-                    </form>
+                    <h4>info@yasinuddowla.com</h4>
                 </div>
                 <div class="social col-md-6 text-right">
                     <h4>Follow Me:</h4>
@@ -142,54 +128,6 @@
         <h5 class="text-center">&copy; Mohammad Yasin Ud Dowla</h5>
     </div>
     
-    <!-- Modal -->
-    <div class="modal fade text-dark" id="confModal" tabindex="-1" role="dialog" aria-labelledby="confModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="confModalLabel">Confirmation</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            </div>
-            <div class="modal-body">
-                <h3 id="replyMsg" class="text-center text-dark"></h3>
-            </div>
-            <div class="modal-footer text-center">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Ok!</button>
-            </div>
-        </div>
-        </div>
-    </div>
-    <script>
-        $(document).ready(function(){
-
-            $('#msgForm').submit( (e) => {
-                e.preventDefault();
-                let name = $('input[name="name"]').val();
-                let email = $('input[name="email"]').val();
-                let msg = $('textarea[name="msg"]').val();
-                $.post("mail.php",
-                {
-                    name,
-                    email,
-                    msg
-                },
-                function(data, status){
-                    $('input[name="name"]').val('');
-                    $('input[name="email"]').val('');
-                    $('textarea[name="msg"]').val('');
-                    if(data == 100){
-                        
-                        $('#replyMsg').text('Mail Sent! Thanks for your mail.');
-                    }else{
-                        $('#replyMsg').text('There was an Error!');
-                    }
-                    $('#confModal').modal('show')
-                });
-            });
-        })
-    </script>
     
 </body>
 </html>
